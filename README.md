@@ -9,16 +9,21 @@ npm install
 npm run dev        # http://localhost:5173
 ```
 
-## Yayına alma
+## Yayına alma (GitHub Pages)
 
-```bash
-npm run build      # dist/ klasörü oluşur
-```
+Site adresi: https://suedakurnaz.github.io/suedakurnazwebsite/
 
-`dist/` klasörünü Vercel, Netlify, GitHub Pages veya Cloudflare Pages'e yüklemen yeterli.
-Vercel/Netlify'da: Build komutu `npm run build`, çıktı klasörü `dist`.
+1. GitHub'da `suedakurnazwebsite` adlı bir repo aç ve bu klasörü gönder
+   (`node_modules`, `dist`, `dist-single` `.gitignore` sayesinde gitmez).
+2. Repo → **Settings → Pages → Source: GitHub Actions** seç.
+3. `main` dalına her gönderimde `.github/workflows/deploy.yml` siteyi kurar ve yayınlar
+   (Actions sekmesinden ilerlemeyi görebilirsin).
 
-`npm run build:single` tüm siteyi tek bir HTML dosyasına (dist-single/index.html) paketler; önizleme ve paylaşım içindir.
+Site göreli yollarla kurulduğu için alt klasörde (`/suedakurnazwebsite/`) sorunsuz çalışır.
+Başka bir yere (Vercel, Netlify) koymak istersen: build komutu `npm run build`, çıktı klasörü `dist`.
+
+CV: `public/Sueda-Kurnaz-CV.pdf`. Kaynağı `cv-kaynak/cv.html`; nasıl yeniden üretileceği
+`cv-kaynak/README.md` içinde.
 
 ## İçeriği değiştirme
 

@@ -205,6 +205,11 @@ export default function App() {
               {n.label}
             </a>
           ))}
+          {SITE.cv && (
+            <a className="nav-cv" href={SITE.cv} target="_blank" rel="noreferrer" title="CV'yi aç (PDF)">
+              cv
+            </a>
+          )}
           <button className="icon-btn" onClick={toggleSound} aria-label={sound ? 'Sesi kapat' : 'Sesi aç'} title={sound ? 'Sesi kapat' : 'Sesi aç'}>
             <SoundIcon on={sound} />
           </button>
@@ -233,6 +238,11 @@ export default function App() {
               </a>
             ))}
           </nav>
+          {SITE.cv && (
+            <a className="menu-cv mono" href={SITE.cv} target="_blank" rel="noreferrer" onClick={() => setMenu(false)}>
+              CV’yi aç ↗
+            </a>
+          )}
           <p className="mono menu-foot">{SITE.role}</p>
         </div>
       )}

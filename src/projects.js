@@ -13,75 +13,6 @@ const shot = (key, label) => {
 
 const RAW = [
   {
-    id: 'firsat',
-    name: 'Fırsat Akışı',
-    layout: 'laptop',
-    kind: 'browser',
-    url: 'firsat-akisi',
-    accent: '#5b5bd6',
-    glow: '#5b5bd6',
-    theme: { bg: '#f4f3ee', dark: false },
-    line1: 'Fırsatlar,',
-    line2: 'sana göre sıralansın.',
-    tagline: 'Fırsatlar, yapay zekâyla sana göre sıralanır.',
-    pills: ['Mart 2026', 'Bireysel proje'],
-    info: {
-      meta: '#bireysel proje · Mart 2026',
-      role: 'kurucu, ürün tasarımı ve yapay zekâ geliştirme',
-      desc: 'Kullanıcının kendi seçtiği sitelerden anlık veri çeken, yapay zekâyla özetleyip kategorize eden ve profiline göre puanlayan kişisel fırsat akışı.',
-      tools: ['Figma', 'Llama 3.3 70B', 'Groq', 'Web']
-    },
-    story: [
-      'Seçilen sitelerden anlık veri çekip yapay zekâyla özetleyen, kategorize eden ve kullanıcı profiline göre puanlayan fırsat akışı.',
-      'Hackathon, yarışma, staj ve bootcamp ilanları tek akışta toplanıyor; her fırsat profil uyumuna göre sıralanıyor ve kaçırılacak tarih kalmıyor.'
-    ],
-    specs: [
-      ['Rol', 'Kurucu, ürün tasarımı ve yapay zekâ geliştirme'],
-      ['Model', 'Llama 3.3 70B · Groq'],
-      ['Araçlar', 'Figma · Web'],
-      ['Tarih', 'Mart 2026']
-    ],
-    stats: [
-      { v: '%84', u: 'uyum', d: 'her fırsat profiline göre puanlanır' },
-      { v: '6', u: 'kategori', d: 'hackathon’dan bootcamp’e' },
-      { v: '70B', u: 'model', d: 'Llama 3.3 ile özetleme' }
-    ],
-    hero: {
-      shot: shot('firsat/01', 'Ana akış'),
-      title: 'Ana akış',
-      points: [
-        { x: 34, y: 14, t: 'Özet sayaçlar', d: 'Aktif fırsat, sana %70+ uygun olanlar ve son 7 günde kapananlar ilk bakışta.' },
-        { x: 84, y: 14.4, t: 'Takip edilen siteler', d: 'Akışı besleyen kaynak sayısı; + ile yeni site eklenir.' },
-        { x: 80, y: 22.8, t: 'Uyuma göre sırala', d: 'Arama ve sıralama; varsayılan sıralama profil uyumu.' },
-        { x: 40.6, y: 29, t: 'Kategoriler', d: 'Hackathon, yarışma, staj, etkinlik, bootcamp, program ve %70+ uyum filtresi.' },
-        { x: 58.6, y: 47, t: 'Profil uyumu', d: 'Her fırsatın profiline ne kadar uyduğu yüzdelik bir halkayla.' },
-        { x: 25.8, y: 65, t: 'Tarihler', d: 'Son başvuru, başlangıç ve bitiş tek satırda; kaçırılacak tarih kalmıyor.' }
-      ]
-    },
-    chapters: [
-      {
-        t: 'Fırsatı incele',
-        d: 'Detay sayfasında profil uyumu, ilanın aradığı yetenekler ve bunların hangilerinin profilinle eşleştiği; tek tıkla takvime ekleme ve başvuruya gitme.',
-        shots: [shot('firsat/02', 'Fırsat detayı · profil uyumu %84')]
-      },
-      {
-        t: 'Kaynaklarını sen seç',
-        d: 'Takip edilen siteler ve her birinden gelen fırsat sayısı. Yeni bir site eklendiğinde, orada yayınlanan her fırsat otomatik olarak akışa düşüyor ve profiline göre puanlanıyor.',
-        shots: [shot('firsat/03', 'Takip ettiğim linkler')]
-      },
-      {
-        t: 'Profil ve CV',
-        d: 'CV yüklendiğinde metin çıkarılıyor, yapay zekâ yetenek ve ilgi alanlarını ayrıştırıp profile ekliyor. Profil doldukça uyum yüzdeleri daha isabetli hâle geliyor.',
-        shots: [shot('firsat/04', 'Profil · CV ile yetenek çıkarımı')]
-      },
-      {
-        t: 'Planla',
-        d: 'Son başvuru ve etkinlik günleri takvimde; kaydedilen fırsatlar kalan gün sayısıyla ve aktif / kapanıyor / kapandı filtresiyle.',
-        shots: [shot('firsat/05', 'Takvim'), shot('firsat/06', 'Kaydedilenler')]
-      }
-    ]
-  },
-  {
     id: 'anadolu',
     name: 'Anadolu.ai',
     layout: 'side',
@@ -159,116 +90,6 @@ const RAW = [
         t: 'Satın alma ve hesap',
         d: 'Sepet, adım adım ödeme ve sipariş onayı; geçmiş siparişler, kargo takibi ve profil ayarları.',
         shots: [shot('anadolu/16', 'Sepetim'), shot('anadolu/17', 'Ödeme'), shot('anadolu/18', 'Sipariş tamamlandı'), shot('anadolu/19', 'Geçmiş siparişler'), shot('anadolu/20', 'Profil ayarları')]
-      }
-    ]
-  },
-  {
-    id: 'wik42',
-    name: 'Konya WIK42',
-    layout: 'laptop',
-    kind: 'browser',
-    url: 'wik42',
-    accent: '#e8781f',
-    glow: '#e8781f',
-    theme: { bg: '#0d1424', dark: true },
-    line1: 'Konya’nın',
-    line2: 'kolektif hafızası.',
-    tagline: 'Öğrencilerin yazdığı, öğrencilerin doğruladığı wiki.',
-    pills: ['Web uygulaması', 'Topluluk'],
-    info: {
-      meta: '#web uygulaması · topluluk',
-      desc: 'Konya’daki üniversite öğrencileri için topluluk wiki’si. İçerikler topluluk tarafından yazılıp doğrulanıyor; katkı verenler GençCoin kazanıyor.',
-      tools: ['Topluluk', 'Doğrulama', 'Coin sistemi', 'Web']
-    },
-    story: [
-      'Bilgi dağınık: otobüs saatleri, kütüphane saatleri, yurt fiyatları, sınav arşivleri ve staj ilanları farklı gruplarda ve sayfalarda kayboluyor. WIK42 bu bilgiyi tek yerde topluyor ve güncelliğini topluluğa emanet ediyor.',
-      'Her bilgi “Doğru / Yanlış” oylarıyla doğrulanıyor, eskiyen içerik işaretleniyor. Katkı veren ve doğrulayan kullanıcı GençCoin kazanıyor; bakiye Kültür Kart’a aktarılabiliyor.'
-    ],
-    specs: [
-      ['Platform', 'Web uygulaması'],
-      ['Kitle', 'Konya’daki üniversite öğrencileri'],
-      ['Öne çıkanlar', 'Topluluk doğrulaması · GençCoin · Kültür Kart'],
-    ],
-    stats: [
-      { v: '4', u: 'kategori', d: 'akademik · yeme-içme · barınma · kariyer' },
-      { v: '+5', u: 'coin', d: 'her doğrulama için' },
-      { v: '12', u: 'ekran', d: 'wiki, rehber, kariyer, profil' }
-    ],
-    hero: {
-      shot: shot('wik42/01', 'Ana sayfa'),
-      title: 'Ana sayfa',
-      points: [
-        { x: 6.7, y: 18.4, t: 'Ana menü', d: 'Ana sayfa, Wiki, Trendler, Topluluk ve Moderasyon.' },
-        { x: 7.5, y: 57, t: 'Kategoriler', d: 'Akademik, Yeme & İçme, Barınma / Yurt, Kariyer / Staj; her biri alt başlıklara açılıyor.' },
-        { x: 58.6, y: 14, t: 'Wiki araması', d: 'Bütün başlıklarda tek alandan arama.' },
-        { x: 30, y: 39.6, t: 'Bunu biliyor muydun?', d: 'Şehirle ilgili öne çıkan bilgi; ayrıntıyı okumaya davet.' },
-        { x: 37.3, y: 63.3, t: 'Doğrula (+5 Coin)', d: 'Bilgiyi doğrulayan kullanıcı coin kazanıyor.' },
-        { x: 58.6, y: 88.8, t: 'Doğru / Yanlış', d: 'Kısa bilgi kartları tek dokunuşla oylanıyor.' },
-        { x: 8.6, y: 93.4, t: 'İçerik ekle', d: 'Her ekranda sabit; herkes katkı verebiliyor.' }
-      ]
-    },
-    chapters: [
-      {
-        t: 'Wiki sayfası',
-        d: 'Bir başlığın sayfası: açıklama, çalışma saatleri, hizmetler ve iletişim. Düzenle, konumu göster ve geçmişi gör; sonunda “Bu bilgi yararlı mıydı?” ve kazanılan coin bildirimi.',
-        shots: [shot('wik42/02', 'Wiki detayı'), shot('wik42/03', 'İçerik ve yararlılık oyu')]
-      },
-      {
-        t: 'Trendler ve topluluk',
-        d: 'Kampüste en çok konuşulan içerikler zaman aralığı ve kategoriye göre sıralanıyor; topluluk ekosisteminde üniversiteler ve öğrenci kulüpleri keşfediliyor.',
-        shots: [shot('wik42/04', 'Trendler'), shot('wik42/05', 'Topluluk ekosistemi')]
-      },
-      {
-        t: 'Şehir rehberi',
-        d: 'Bölgeye göre filtrelenen kafeler, ayrıntılı mekân sayfası ve üniversiteye göre özel yurtlar.',
-        shots: [shot('wik42/06', 'Kafeler'), shot('wik42/07', 'Mekân detayı'), shot('wik42/08', 'Özel yurtlar')]
-      },
-      {
-        t: 'Akademik ve kariyer',
-        d: 'Ders notları ve sınav arşivi, Konya’daki staj ilanları ve çalışanların yazdığı şirket incelemeleri.',
-        shots: [shot('wik42/09', 'Akademik · sınavlar'), shot('wik42/10', 'Staj ilanları'), shot('wik42/11', 'Şirket incelemeleri')]
-      },
-      {
-        t: 'Profil ve GençCoin',
-        d: 'Coin bakiyesi, Kültür Kart’a aktarma, seviye, arkadaş davet kodu ve son aktiviteler.',
-        shots: [shot('wik42/12', 'Profil')]
-      }
-    ]
-  },
-  {
-    id: 'gorev',
-    name: 'Görev Takip',
-    layout: 'side',
-    kind: 'browser',
-    url: 'gorev-takip',
-    accent: '#6d4ae0',
-    glow: '#6d4ae0',
-    theme: { bg: '#f4f5fa', dark: false },
-    line1: 'Tüm görevler,',
-    line2: 'tek panelde.',
-    tagline: 'Görevler, öncelikler ve ilerleme tek panelde.',
-    pills: ['Web uygulaması', 'Verimlilik'],
-    info: {
-      meta: '#web uygulaması · verimlilik',
-      desc: 'Kategori, öncelik ve durum filtreli görev yönetimi. Tamamlanma oranı, kategori grafiği ve öncelik dağılımı tek panelde.',
-      tools: ['Dashboard', 'Filtreleme', 'Grafikler', 'Web']
-    },
-    story: ['Kategori, öncelik ve durum filtreli görev yönetimi; tamamlanma oranı ve grafikler tek panelde.'],
-    specs: [
-      ['Platform', 'Web uygulaması'],
-      ['Filtreler', 'Kategori · öncelik · durum'],
-      ['Panel', 'Tamamlanma oranı · kategori grafiği · öncelik dağılımı']
-    ],
-    stats: [
-      { v: '4', u: 'sayaç', d: 'toplam · tamamlanan · bekleyen · bugün' },
-      { v: '3', u: 'filtre', d: 'kategori · öncelik · durum' },
-      { v: '1', u: 'panel', d: 'tüm metrikler bir arada' }
-    ],
-    chapters: [
-      {
-        t: 'Panel',
-        d: 'Toplam, tamamlanan, bekleyen ve bugünkü görev sayaçları; kategori grafiği, öncelik dağılımı ve tamamlanma oranı tek panelde.',
-        shots: [shot('gorev/01', 'Görev Takip · panel')]
       }
     ]
   },
@@ -352,6 +173,75 @@ const RAW = [
     ]
   },
   {
+    id: 'firsat',
+    name: 'Fırsat Akışı',
+    layout: 'laptop',
+    kind: 'browser',
+    url: 'firsat-akisi',
+    accent: '#5b5bd6',
+    glow: '#5b5bd6',
+    theme: { bg: '#f4f3ee', dark: false },
+    line1: 'Fırsatlar,',
+    line2: 'sana göre sıralansın.',
+    tagline: 'Fırsatlar, yapay zekâyla sana göre sıralanır.',
+    pills: ['Mart 2026', 'Bireysel proje'],
+    info: {
+      meta: '#bireysel proje · Mart 2026',
+      role: 'kurucu, ürün tasarımı ve yapay zekâ geliştirme',
+      desc: 'Kullanıcının kendi seçtiği sitelerden anlık veri çeken, yapay zekâyla özetleyip kategorize eden ve profiline göre puanlayan kişisel fırsat akışı.',
+      tools: ['Figma', 'Llama 3.3 70B', 'Groq', 'Web']
+    },
+    story: [
+      'Seçilen sitelerden anlık veri çekip yapay zekâyla özetleyen, kategorize eden ve kullanıcı profiline göre puanlayan fırsat akışı.',
+      'Hackathon, yarışma, staj ve bootcamp ilanları tek akışta toplanıyor; her fırsat profil uyumuna göre sıralanıyor ve kaçırılacak tarih kalmıyor.'
+    ],
+    specs: [
+      ['Rol', 'Kurucu, ürün tasarımı ve yapay zekâ geliştirme'],
+      ['Model', 'Llama 3.3 70B · Groq'],
+      ['Araçlar', 'Figma · Web'],
+      ['Tarih', 'Mart 2026']
+    ],
+    stats: [
+      { v: '%84', u: 'uyum', d: 'her fırsat profiline göre puanlanır' },
+      { v: '6', u: 'kategori', d: 'hackathon’dan bootcamp’e' },
+      { v: '70B', u: 'model', d: 'Llama 3.3 ile özetleme' }
+    ],
+    hero: {
+      shot: shot('firsat/01', 'Ana akış'),
+      title: 'Ana akış',
+      points: [
+        { x: 34, y: 14, t: 'Özet sayaçlar', d: 'Aktif fırsat, sana %70+ uygun olanlar ve son 7 günde kapananlar ilk bakışta.' },
+        { x: 84, y: 14.4, t: 'Takip edilen siteler', d: 'Akışı besleyen kaynak sayısı; + ile yeni site eklenir.' },
+        { x: 80, y: 22.8, t: 'Uyuma göre sırala', d: 'Arama ve sıralama; varsayılan sıralama profil uyumu.' },
+        { x: 40.6, y: 29, t: 'Kategoriler', d: 'Hackathon, yarışma, staj, etkinlik, bootcamp, program ve %70+ uyum filtresi.' },
+        { x: 58.6, y: 47, t: 'Profil uyumu', d: 'Her fırsatın profiline ne kadar uyduğu yüzdelik bir halkayla.' },
+        { x: 25.8, y: 65, t: 'Tarihler', d: 'Son başvuru, başlangıç ve bitiş tek satırda; kaçırılacak tarih kalmıyor.' }
+      ]
+    },
+    chapters: [
+      {
+        t: 'Fırsatı incele',
+        d: 'Detay sayfasında profil uyumu, ilanın aradığı yetenekler ve bunların hangilerinin profilinle eşleştiği; tek tıkla takvime ekleme ve başvuruya gitme.',
+        shots: [shot('firsat/02', 'Fırsat detayı · profil uyumu %84')]
+      },
+      {
+        t: 'Kaynaklarını sen seç',
+        d: 'Takip edilen siteler ve her birinden gelen fırsat sayısı. Yeni bir site eklendiğinde, orada yayınlanan her fırsat otomatik olarak akışa düşüyor ve profiline göre puanlanıyor.',
+        shots: [shot('firsat/03', 'Takip ettiğim linkler')]
+      },
+      {
+        t: 'Profil ve CV',
+        d: 'CV yüklendiğinde metin çıkarılıyor, yapay zekâ yetenek ve ilgi alanlarını ayrıştırıp profile ekliyor. Profil doldukça uyum yüzdeleri daha isabetli hâle geliyor.',
+        shots: [shot('firsat/04', 'Profil · CV ile yetenek çıkarımı')]
+      },
+      {
+        t: 'Planla',
+        d: 'Son başvuru ve etkinlik günleri takvimde; kaydedilen fırsatlar kalan gün sayısıyla ve aktif / kapanıyor / kapandı filtresiyle.',
+        shots: [shot('firsat/05', 'Takvim'), shot('firsat/06', 'Kaydedilenler')]
+      }
+    ]
+  },
+  {
     id: 'subik',
     name: 'Subik Travel',
     layout: 'side',
@@ -400,6 +290,166 @@ const RAW = [
         t: 'Rezervasyon · 3 adım',
         d: 'Kişisel bilgiler, tarih ve kişi sayısı, ödeme özeti; ardından onay ekranı.',
         shots: [shot('subik/05', 'Adım 1 · bilgiler'), shot('subik/06', 'Adım 2 · tarih ve kişi'), shot('subik/07', 'Adım 3 · ödeme'), shot('subik/08', 'Rezervasyon onaylandı')]
+      }
+    ]
+  },
+  {
+    id: 'wik42',
+    name: 'Konya WIK42',
+    layout: 'laptop',
+    kind: 'browser',
+    url: 'wik42',
+    accent: '#e8781f',
+    glow: '#e8781f',
+    theme: { bg: '#0d1424', dark: true },
+    line1: 'Konya’nın',
+    line2: 'kolektif hafızası.',
+    tagline: 'Öğrencilerin yazdığı, öğrencilerin doğruladığı wiki.',
+    pills: ['Kasım 2025', 'Divizyon Jam Week'],
+    info: {
+      meta: '#divizyon jam week · kasım 2025 · web',
+      desc: 'Konya’daki üniversite öğrencileri için topluluk wiki’si. İçerikler topluluk tarafından yazılıp doğrulanıyor; katkı verenler GençCoin kazanıyor.',
+      tools: ['Topluluk', 'Doğrulama', 'Coin sistemi', 'Web']
+    },
+    story: [
+      'Bilgi dağınık: otobüs saatleri, kütüphane saatleri, yurt fiyatları, sınav arşivleri ve staj ilanları farklı gruplarda ve sayfalarda kayboluyor. WIK42 bu bilgiyi tek yerde topluyor ve güncelliğini topluluğa emanet ediyor.',
+      'Her bilgi “Doğru / Yanlış” oylarıyla doğrulanıyor, eskiyen içerik işaretleniyor. Katkı veren ve doğrulayan kullanıcı GençCoin kazanıyor; bakiye Kültür Kart’a aktarılabiliyor.'
+    ],
+    specs: [
+      ['Platform', 'Web uygulaması'],
+      ['Kitle', 'Konya’daki üniversite öğrencileri'],
+      ['Öne çıkanlar', 'Topluluk doğrulaması · GençCoin · Kültür Kart'],
+    ],
+    stats: [
+      { v: '4', u: 'kategori', d: 'akademik · yeme-içme · barınma · kariyer' },
+      { v: '+5', u: 'coin', d: 'her doğrulama için' },
+      { v: '12', u: 'ekran', d: 'wiki, rehber, kariyer, profil' }
+    ],
+    hero: {
+      shot: shot('wik42/01', 'Ana sayfa'),
+      title: 'Ana sayfa',
+      points: [
+        { x: 6.7, y: 18.4, t: 'Ana menü', d: 'Ana sayfa, Wiki, Trendler, Topluluk ve Moderasyon.' },
+        { x: 7.5, y: 57, t: 'Kategoriler', d: 'Akademik, Yeme & İçme, Barınma / Yurt, Kariyer / Staj; her biri alt başlıklara açılıyor.' },
+        { x: 58.6, y: 14, t: 'Wiki araması', d: 'Bütün başlıklarda tek alandan arama.' },
+        { x: 30, y: 39.6, t: 'Bunu biliyor muydun?', d: 'Şehirle ilgili öne çıkan bilgi; ayrıntıyı okumaya davet.' },
+        { x: 37.3, y: 63.3, t: 'Doğrula (+5 Coin)', d: 'Bilgiyi doğrulayan kullanıcı coin kazanıyor.' },
+        { x: 58.6, y: 88.8, t: 'Doğru / Yanlış', d: 'Kısa bilgi kartları tek dokunuşla oylanıyor.' },
+        { x: 8.6, y: 93.4, t: 'İçerik ekle', d: 'Her ekranda sabit; herkes katkı verebiliyor.' }
+      ]
+    },
+    chapters: [
+      {
+        t: 'Wiki sayfası',
+        d: 'Bir başlığın sayfası: açıklama, çalışma saatleri, hizmetler ve iletişim. Düzenle, konumu göster ve geçmişi gör; sonunda “Bu bilgi yararlı mıydı?” ve kazanılan coin bildirimi.',
+        shots: [shot('wik42/02', 'Wiki detayı'), shot('wik42/03', 'İçerik ve yararlılık oyu')]
+      },
+      {
+        t: 'Trendler ve topluluk',
+        d: 'Kampüste en çok konuşulan içerikler zaman aralığı ve kategoriye göre sıralanıyor; topluluk ekosisteminde üniversiteler ve öğrenci kulüpleri keşfediliyor.',
+        shots: [shot('wik42/04', 'Trendler'), shot('wik42/05', 'Topluluk ekosistemi')]
+      },
+      {
+        t: 'Şehir rehberi',
+        d: 'Bölgeye göre filtrelenen kafeler, ayrıntılı mekân sayfası ve üniversiteye göre özel yurtlar.',
+        shots: [shot('wik42/06', 'Kafeler'), shot('wik42/07', 'Mekân detayı'), shot('wik42/08', 'Özel yurtlar')]
+      },
+      {
+        t: 'Akademik ve kariyer',
+        d: 'Ders notları ve sınav arşivi, Konya’daki staj ilanları ve çalışanların yazdığı şirket incelemeleri.',
+        shots: [shot('wik42/09', 'Akademik · sınavlar'), shot('wik42/10', 'Staj ilanları'), shot('wik42/11', 'Şirket incelemeleri')]
+      },
+      {
+        t: 'Profil ve GençCoin',
+        d: 'Coin bakiyesi, Kültür Kart’a aktarma, seviye, arkadaş davet kodu ve son aktiviteler.',
+        shots: [shot('wik42/12', 'Profil')]
+      }
+    ]
+  },
+  {
+    id: 'cinetrack',
+    name: 'CineTrack',
+    layout: 'center',
+    kind: 'phone',
+    accent: '#f2b632',
+    glow: '#f2b632',
+    theme: { bg: '#0e0f14', dark: true },
+    line1: 'İzlediklerin,',
+    line2: 'tek listede.',
+    tagline: 'Film ve dizi kataloğu, kendi izleme listenle.',
+    pills: ['TNC Group', 'Flutter'],
+    info: {
+      meta: '#tnc group · software persona',
+      role: 'geliştirici, Flutter',
+      desc: 'Film ve dizi kataloğu: trendler, kategoriler, arama, tür filtresi ve “izledim / izliyorum / izleyeceğim” işaretleme.',
+      tools: ['Flutter', 'Mobil', 'Arama ve filtre']
+    },
+    story: [
+      '8 film ve 6 diziden oluşan 14 başlıklık bir katalog. Ana sayfada hero banner, kategoriler ve yatay kaydırmalı trend listeleri; keşfette gerçek zamanlı arama, film / dizi geçişi, tür filtresi ve sıralama.',
+      'Her başlık “İzledim / İzliyorum / İzleyeceğim” olarak işaretlenebiliyor; izleme listesi bu durumlara göre sekmelere ayrılıyor.'
+    ],
+    specs: [
+      ['Rol', 'Flutter geliştirici'],
+      ['Bağlam', 'TNC Group · Software Persona'],
+      ['Platform', 'Mobil uygulama']
+    ],
+    stats: [
+      { v: '14', u: 'başlık', d: '8 film ve 6 dizi' },
+      { v: '3', u: 'durum', d: 'izledim · izliyorum · izleyeceğim' },
+      { v: '1', u: 'izleme listesi', d: 'durumlara göre sekmeler' }
+    ],
+    chapters: [
+      {
+        t: 'Keşif',
+        d: 'Ana sayfa ve üç sütunlu, filtrelenebilir keşfet ekranı.',
+        shots: [shot('cinetrack/01', 'Ana sayfa'), shot('cinetrack/02', 'Keşfet')]
+      },
+      {
+        t: 'Başlık detayı',
+        d: 'IMDb puanı, tür etiketleri, özet, yapım kadrosu ve izleme durumu.',
+        shots: [shot('cinetrack/03', 'Film detayı'), shot('cinetrack/04', 'Dizi detayı')]
+      },
+      {
+        t: 'İzleme listem',
+        d: 'İzledim, izliyorum ve izleyeceğim sekmeleri.',
+        shots: [shot('cinetrack/05', 'İzleme listem')]
+      }
+    ]
+  },
+  {
+    id: 'gorev',
+    name: 'Görev Takip',
+    layout: 'side',
+    kind: 'browser',
+    url: 'gorev-takip',
+    accent: '#6d4ae0',
+    glow: '#6d4ae0',
+    theme: { bg: '#f4f5fa', dark: false },
+    line1: 'Tüm görevler,',
+    line2: 'tek panelde.',
+    tagline: 'Görevler, öncelikler ve ilerleme tek panelde.',
+    pills: ['Web uygulaması', 'Verimlilik'],
+    info: {
+      meta: '#web uygulaması · verimlilik',
+      desc: 'Kategori, öncelik ve durum filtreli görev yönetimi. Tamamlanma oranı, kategori grafiği ve öncelik dağılımı tek panelde.',
+      tools: ['Dashboard', 'Filtreleme', 'Grafikler', 'Web']
+    },
+    story: ['Kategori, öncelik ve durum filtreli görev yönetimi; tamamlanma oranı ve grafikler tek panelde.'],
+    specs: [
+      ['Platform', 'Web uygulaması'],
+      ['Filtreler', 'Kategori · öncelik · durum'],
+      ['Panel', 'Tamamlanma oranı · kategori grafiği · öncelik dağılımı']
+    ],
+    stats: [
+      { v: '4', u: 'sayaç', d: 'toplam · tamamlanan · bekleyen · bugün' },
+      { v: '3', u: 'filtre', d: 'kategori · öncelik · durum' },
+      { v: '1', u: 'panel', d: 'tüm metrikler bir arada' }
+    ],
+    chapters: [
+      {
+        t: 'Panel',
+        d: 'Toplam, tamamlanan, bekleyen ve bugünkü görev sayaçları; kategori grafiği, öncelik dağılımı ve tamamlanma oranı tek panelde.',
+        shots: [shot('gorev/01', 'Görev Takip · panel')]
       }
     ]
   },
@@ -455,56 +505,6 @@ const RAW = [
         t: 'Notlar ve profil',
         d: 'Renkli not kartları, 30 gün tutulan çöp kutusu ve beceriler, hedefler, rozetlerle profil.',
         shots: [shot('odak/06', 'Notlarım'), shot('odak/07', 'Çöp kutusu'), shot('odak/08', 'Profil')]
-      }
-    ]
-  },
-  {
-    id: 'cinetrack',
-    name: 'CineTrack',
-    layout: 'center',
-    kind: 'phone',
-    accent: '#f2b632',
-    glow: '#f2b632',
-    theme: { bg: '#0e0f14', dark: true },
-    line1: 'İzlediklerin,',
-    line2: 'tek listede.',
-    tagline: 'Film ve dizi kataloğu, kendi izleme listenle.',
-    pills: ['TNC Group', 'Flutter'],
-    info: {
-      meta: '#tnc group · software persona',
-      role: 'geliştirici, Flutter',
-      desc: 'Film ve dizi kataloğu: trendler, kategoriler, arama, tür filtresi ve “izledim / izliyorum / izleyeceğim” işaretleme.',
-      tools: ['Flutter', 'Mobil', 'Arama ve filtre']
-    },
-    story: [
-      '8 film ve 6 diziden oluşan 14 başlıklık bir katalog. Ana sayfada hero banner, kategoriler ve yatay kaydırmalı trend listeleri; keşfette gerçek zamanlı arama, film / dizi geçişi, tür filtresi ve sıralama.',
-      'Her başlık “İzledim / İzliyorum / İzleyeceğim” olarak işaretlenebiliyor; izleme listesi bu durumlara göre sekmelere ayrılıyor.'
-    ],
-    specs: [
-      ['Rol', 'Flutter geliştirici'],
-      ['Bağlam', 'TNC Group · Software Persona'],
-      ['Platform', 'Mobil uygulama']
-    ],
-    stats: [
-      { v: '14', u: 'başlık', d: '8 film ve 6 dizi' },
-      { v: '3', u: 'durum', d: 'izledim · izliyorum · izleyeceğim' },
-      { v: '1', u: 'izleme listesi', d: 'durumlara göre sekmeler' }
-    ],
-    chapters: [
-      {
-        t: 'Keşif',
-        d: 'Ana sayfa ve üç sütunlu, filtrelenebilir keşfet ekranı.',
-        shots: [shot('cinetrack/01', 'Ana sayfa'), shot('cinetrack/02', 'Keşfet')]
-      },
-      {
-        t: 'Başlık detayı',
-        d: 'IMDb puanı, tür etiketleri, özet, yapım kadrosu ve izleme durumu.',
-        shots: [shot('cinetrack/03', 'Film detayı'), shot('cinetrack/04', 'Dizi detayı')]
-      },
-      {
-        t: 'İzleme listem',
-        d: 'İzledim, izliyorum ve izleyeceğim sekmeleri.',
-        shots: [shot('cinetrack/05', 'İzleme listem')]
       }
     ]
   },

@@ -3,7 +3,7 @@ import MicroSlats from '../components/MicroSlats';
 import Starfield from '../components/Starfield';
 import { PROJECTS } from '../projects';
 import { ABOUT, JOURNEY, KIND_COLORS, SITE, STACK } from '../site';
-import { Arrow, REDUCED, pad2 } from '../ui';
+import { Arrow, Back, Close, REDUCED, pad2 } from '../ui';
 
 const byId = id => PROJECTS.findIndex(p => p.id === id);
 const idle = { current: 0 };
@@ -146,12 +146,94 @@ export const Stack = () => {
   );
 };
 
+/* ---------- Photo viewer for journey stops ---------- */
+const PhotoViewer = ({ photos, start, title, onClose }) => {
+  const [i, setI] = useState(start);
+  const closeBtn = useRef(null);
+  const n = photos.length;
+  const p = photos[i];
+
+  useEffect(() => {
+    const back = document.activeElement;
+    closeBtn.current?.focus();
+    const root = document.documentElement;
+    const prev = root.style.overflow;
+    root.style.overflow = 'hidden';
+    const key = e => {
+      if (e.key === 'Escape') onClose();
+      else if (e.key === 'ArrowRight') setI(v => (v + 1) % n);
+      else if (e.key === 'ArrowLeft') setI(v => (v - 1 + n) % n);
+    };
+    window.addEventListener('keydown', key);
+    return () => {
+      window.removeEventListener('keydown', key);
+      root.style.overflow = prev;
+      back?.focus?.();
+    };
+  }, [n, onClose]);
+
+  // swipe on phones
+  const touch = useRef(null);
+  const onTouchStart = e => {
+    touch.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = e => {
+    if (touch.current === null) return;
+    const dx = e.changedTouches[0].clientX - touch.current;
+    touch.current = null;
+    if (Math.abs(dx) > 40) setI(v => (v + (dx < 0 ? 1 : -1) + n) % n);
+  };
+
+  return (
+    <div className="pv" role="dialog" aria-modal="true" aria-label={`${title} — fotoğraflar`} onClick={onClose} onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
+      <figure className="pv-fig" onClick={e => e.stopPropagation()}>
+        <img key={p.src} src={p.src} alt={p.caption} width={p.w} height={p.h} />
+        <figcaption>
+          <span className="mono pv-count">
+            {pad2(i + 1)} / {pad2(n)}
+          </span>
+          {p.caption}
+        </figcaption>
+      </figure>
+      <button className="icon-btn pv-close" ref={closeBtn} onClick={onClose} aria-label="Kapat">
+        <Close />
+      </button>
+      {n > 1 && (
+        <>
+          <button
+            className="icon-btn pv-nav pv-prev"
+            onClick={e => {
+              e.stopPropagation();
+              setI(v => (v - 1 + n) % n);
+            }}
+            aria-label="Önceki fotoğraf"
+          >
+            <Back />
+          </button>
+          <button
+            className="icon-btn pv-nav pv-next"
+            onClick={e => {
+              e.stopPropagation();
+              setI(v => (v + 1) % n);
+            }}
+            aria-label="Sonraki fotoğraf"
+          >
+            <Arrow />
+          </button>
+        </>
+      )}
+    </div>
+  );
+};
+
 /* ---------- Journey: a readable log, grouped by year ---------- */
-const yearOf = when => (when.match(/\d{4}/) || ['sırada'])[0];
-const KIND_ORDER = ['hackathon', 'yarışma', 'ödül', 'staj', 'topluluk', 'okul'];
+const yearOf = j => (j.now ? 'Şu an' : (j.when.match(/\d{4}/) || ['sırada'])[0]);
+const KIND_ORDER = ['hackathon', 'yarışma', 'ödül', 'staj', 'program', 'topluluk', 'okul'];
 
 export const Journey = ({ onCase }) => {
   const sec = useRef(null);
+  const [viewing, setViewing] = useState(null); // { stop, index }
+  const closeViewer = useRef(() => setViewing(null)).current;
   const fill = useRef(null);
 
   // the line fills in and each stop lights up as it passes the reading line
@@ -172,7 +254,7 @@ export const Journey = ({ onCase }) => {
   // group stops by year, keep their order
   const groups = [];
   JOURNEY.forEach((j, i) => {
-    const y = yearOf(j.when);
+    const y = yearOf(j);
     const last = groups[groups.length - 1];
     if (last && last.year === y) last.items.push([j, i]);
     else groups.push({ year: y, items: [[j, i]] });
@@ -216,8 +298,8 @@ export const Journey = ({ onCase }) => {
               )}
               <ol>
                 {g.items.map(([j, i]) => {
-                  const pi = j.project ? byId(j.project) : -1;
-                  const proj = pi >= 0 ? PROJECTS[pi] : null;
+                  const links = (j.projects || (j.project ? [j.project] : [])).map(byId).filter(x => x >= 0);
+                  const proj = links.length ? PROJECTS[links[0]] : null;
                   const k = KIND_COLORS[j.kind] || '#f3f2ee';
                   const next = j.kind === 'sırada';
                   return (
@@ -237,15 +319,30 @@ export const Journey = ({ onCase }) => {
                           ))}
                         </ul>
                       )}
-                      {proj && (
-                        <button className="tl-project jr-project" onClick={() => onCase(pi)} style={{ '--accent': proj.accent }}>
-                          <img src={proj.screens[0].src} alt="" loading="lazy" />
-                          <span>
-                            <span className="mono">projeyi incele</span>
-                            <strong>{proj.name}</strong>
-                          </span>
-                          <Arrow />
-                        </button>
+                      {j.photos && (
+                        <ul className="jr-photos" data-n={j.photos.length} aria-label={`${j.where} — fotoğraflar`}>
+                          {j.photos.map((ph, k) => (
+                            <li key={ph.src}>
+                              <button onClick={() => setViewing({ stop: i, index: k })} aria-label={`Fotoğrafı büyüt: ${ph.caption}`}>
+                                <img src={ph.src} alt="" loading="lazy" style={{ objectPosition: ph.focus }} />
+                              </button>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                      {links.length > 0 && (
+                        <div className="jr-projects">
+                          {links.map(pi => (
+                            <button key={pi} className="tl-project jr-project" onClick={() => onCase(pi)} style={{ '--accent': PROJECTS[pi].accent, '--pacc': PROJECTS[pi].accent }}>
+                              <img src={PROJECTS[pi].screens[0].src} alt="" loading="lazy" />
+                              <span>
+                                <span className="mono">projeyi incele</span>
+                                <strong>{PROJECTS[pi].name}</strong>
+                              </span>
+                              <Arrow />
+                            </button>
+                          ))}
+                        </div>
                       )}
                       {next && (
                         <a className="btn btn-lime jr-cta" href="#iletisim">
@@ -260,6 +357,9 @@ export const Journey = ({ onCase }) => {
           ))}
         </div>
       </div>
+      {viewing && (
+        <PhotoViewer photos={JOURNEY[viewing.stop].photos} start={viewing.index} title={JOURNEY[viewing.stop].where} onClose={closeViewer} />
+      )}
     </section>
   );
 };
@@ -310,7 +410,7 @@ export const Contact = ({ onCopy }) => {
           </a>
           {SITE.cv && (
             <a className="btn btn-glass btn-lg" href={SITE.cv} target="_blank" rel="noreferrer">
-              CV <Arrow />
+              CV’yi aç <Arrow />
             </a>
           )}
         </div>
