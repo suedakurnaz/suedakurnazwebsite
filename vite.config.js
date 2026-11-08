@@ -5,7 +5,7 @@ import { viteSingleFile } from 'vite-plugin-singlefile';
 // `npm run build`        → normal production build in dist/ (deploy this)
 // `npm run build:single` → one self-contained HTML file in dist-single/ (for previews)
 export default defineConfig(({ mode }) => ({
-  base: './',
+  base: '/suedakurnazwebsite/',
   plugins: [react(), ...(mode === 'single' ? [viteSingleFile()] : [])],
   build: mode === 'single' ? { outDir: 'dist-single' } : { outDir: 'dist', assetsInlineLimit: 0 }
 }));
