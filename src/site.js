@@ -3,10 +3,10 @@
 export const SITE = {
   name: 'Sueda Kurnaz',
   short: 'sk.',
-  role: 'Yapay zekâ / LLM yazılım geliştirici',
+  role: 'Product Designer (AI) · Product Builder',
   sub: 'Bilgisayar mühendisliği öğrencisi',
   location: 'Konya · hibrit / uzaktan',
-  lede: 'Yapay zekâ destekli ürünleri fikirden yayına taşıyorum: LLM entegrasyonu, agent sistemleri ve kullanıcının dokunduğu arayüz.',
+  lede: 'Ürünleri tasarlıyor, yapay zekâyla fikirden yayına taşıyorum: problemi anlamak, akışı ve arayüzü kurmak, çalışan prototipe dönüştürmek.',
   email: 'suedakurnaz15@gmail.com',
   links: [
     { label: 'LinkedIn', href: 'https://linkedin.com/in/suedakurnaz' },
@@ -20,19 +20,20 @@ export const ABOUT = {
   hello: 'Merhaba, ben Sueda.',
   bio: [
     'Konya Gıda ve Tarım Üniversitesi’nde bilgisayar mühendisliği 3. sınıf öğrencisiyim.',
-    'Python ve JavaScript ile yapay zekâ destekli uygulamalar geliştiriyor; LLM entegrasyonu, agent sistemleri ve prompt mühendisliği üzerine çalışıyorum.'
+    'Problemi ve kullanıcıyı anlayıp akışları ve arayüzleri tasarlıyor, ürünün altyapısını ve kendisini yapay zekâ araçlarıyla geliştirip yayına alıyorum. LLM entegrasyonu, agent akışları ve human-in-the-loop gibi yapay zekâ ürün deneyimleri üzerine çalışıyorum.'
   ],
   facts: [
     ['Okul', 'Konya Gıda ve Tarım Üniversitesi · Bilgisayar Mühendisliği'],
     ['Konum', 'Konya · hibrit / uzaktan'],
-    ['Odak', 'LLM entegrasyonu · agent sistemleri · prompt mühendisliği'],
-    ['Diller', 'Türkçe (ana dil) · İngilizce (B1)']
+    ['Odak', 'Ürün tasarımı · yapay zekâ ile ürün geliştirme · LLM ve agent akışları'],
+    ['Diller', 'Türkçe (ana dil) · İngilizce (B1)'],
+    ['Sertifika', 'Google UX Design Professional Certificate']
   ],
   approach: [
     { t: 'Baştan sona', d: 'Fikir, prototip, yayın ve geri bildirim; her aşamada yer alırım.' },
     { t: 'Önce problem', d: 'Çözüme geçmeden problemi ve kullanıcı ihtiyacını netleştiririm.' },
     { t: 'Erken prototip', d: 'İki Startup Weekend bana erken geri bildirimin değerini öğretti.' },
-    { t: 'Kontrollü yapay zekâ', d: 'Yapay zekâ bir araç; model çıktıları için kontrol adımları tasarlarım.' }
+    { t: 'Kontrollü yapay zekâ', d: 'Yapay zekâ bir araç: onunla tasarlar ve geliştiririm, model çıktıları ve kod için her adımda kontrol adımları koyarım.' }
   ]
 };
 
@@ -40,39 +41,39 @@ export const ABOUT = {
 // (shown on hover, tap or keyboard focus).
 export const STACK = [
   {
-    group: 'Yapay zekâ',
+    group: 'Tasarım',
+    items: [
+      { name: 'Figma · UI tasarımı', note: 'Anadolu.ai’de 19 ekranlık pazar yeri, Subik Travel’da yeniden kullanılabilir bileşenler.' },
+      { name: 'UX · Kullanıcı akışı', note: 'Keşiften onaya 5 ekranlık rezervasyon akışı · Google UX sertifikası.' },
+      { name: 'Prototipleme', note: 'İki Startup Weekend’de 54 saatte yüksek sadakatli ve çalışan prototip.' },
+      { name: 'Ürün sunumu · Pitch', note: 'Anadolu.ai ve SparkZone’u jüriye sundum; AromaMind ile üçüncülük.' }
+    ]
+  },
+  {
+    group: 'Yapay zekâ deneyimi',
     items: [
       { name: 'Speech‑to‑Text · Whisper', note: 'Öğrenci konuşmasını Türkçe metne çeviren akışı kurdum.' },
       { name: 'Eval · Model karşılaştırma', note: "Whisper modellerini test ettim; doğruluk 12 cümlede 4'ten 8'e çıktı." },
       { name: 'Human‑in‑the‑loop · Güven eşiği', note: 'Güveni düşük puanlar otomatik olarak öğretmen incelemesine düşüyor.' },
-      { name: 'Konuşma agent’ı · Görev takibi', note: 'Bilge: rol yapma diyaloğunda tamamlanan görevleri takip eden asistan.' }
+      { name: 'Konuşma agent’ı · Görev takibi', note: 'Bilge: rol yapma diyaloğunda tamamlanan görevleri takip eden asistanı geliştirdim.' }
     ]
   },
   {
-    group: 'Diller',
+    group: 'Yapay zekâ ile geliştirme',
     items: [
-      { name: 'Python', note: 'Fırsat Akışı’nda veri çekme hattı, FLO’da Türkçe yorum analizi.' },
-      { name: 'TypeScript', note: 'Türkçe öğrenme platformunun öğrenci ve öğretmen arayüzleri.' },
-      { name: 'SQL', note: 'Supabase’de tablo tasarımı, beceri puanı fonksiyonları.' },
-      { name: 'Dart', note: 'Flutter ile film kataloğu uygulaması.' }
+      { name: 'Claude Code · Cursor', note: 'Ürünlerimin arayüzünü ve altyapısını yapay zekâyla geliştiriyorum.' },
+      { name: 'Emergent · Antigravity', note: 'SparkZone’u 54 saatte çalışan prototipe taşıdık.' },
+      { name: 'LLM API · Llama 3.3', note: 'Fırsat Akışı’nda ilanları özetleyip profile göre puanlayan akış.' },
+      { name: 'Prompt tasarımı', note: 'Odak Paneli’nde yazılanı doğru bölüme yerleştiren sınıflandırma.' }
     ]
   },
   {
-    group: 'Arayüz',
+    group: 'Ürün altyapısı',
     items: [
-      { name: 'React · Next.js', note: 'Öğrenme platformu arayüzleri ve kullanıcı yönetim paneli.' },
-      { name: 'Tailwind CSS', note: 'Yönetim paneli ve web projelerimin tasarımı.' },
-      { name: 'Flutter', note: 'iOS ve Android’de çalışan film kataloğu uygulaması.' },
-      { name: 'Figma · UX tasarımı', note: '5 ekranlık rezervasyon akışı · Google UX sertifikası.' }
-    ]
-  },
-  {
-    group: 'Altyapı',
-    items: [
+      { name: 'Next.js · React', note: 'Öğrenme platformunun öğrenci ve öğretmen arayüzlerini geliştirdim.' },
       { name: 'Supabase · RLS', note: '28 kuralla her kullanıcı yalnızca yetkili olduğu veriyi görüyor.' },
-      { name: 'REST API · Node.js', note: 'Ses yükleme, yazıya çevirme ve puanlama uç noktaları.' },
-      { name: 'Web scraping · Veri hattı', note: 'Sitelerden ilan çekip LLM ile özetleyen hat.' },
-      { name: 'Git · GitHub · Vercel', note: 'Ana dala gönderince otomatik yayın; projelerim canlıda.' }
+      { name: 'Flutter', note: 'iOS ve Android’de çalışan film kataloğu: CineTrack.' },
+      { name: 'GitHub · Vercel', note: 'Ana dala gönderince otomatik yayın; projelerim canlıda.' }
     ]
   }
 ];
@@ -117,7 +118,7 @@ export const JOURNEY = [
     kind: 'hackathon',
     where: 'Divizyon Jam Week #2548',
     detail: 'Divizyon · 26–30 Kasım 2025',
-    role: 'Haftanın case’i olan Konya WIK42’yi geliştirdim: öğrencilerin yazıp doğruladığı şehir wikisi, yorumlar, GençCoin ödülleri ve moderasyon.',
+    role: 'Haftanın case’i olan Konya WIK42’yi yapay zekâyla tasarlayıp geliştirdim: öğrencilerin yazıp doğruladığı şehir wikisi, yorumlar, GençCoin ödülleri ve moderasyon.',
     project: 'wik42',
     photos: [
       photo('jamweek-1', 'Jam Week’te kod başında', 1054, 1400, '50% 70%'),
@@ -192,7 +193,7 @@ export const JOURNEY = [
     kind: 'staj',
     where: 'TNC Group · Software Persona',
     detail: 'Yazılım geliştirme stajyeri',
-    role: 'Yazılım geliştirme stajında iki proje geliştirdik: Subik Travel ve CineTrack.',
+    role: 'Staj kapsamında iki proje: Subik Travel’ın arayüzünü Figma’da tasarladım, CineTrack’i Flutter ile geliştirdim.',
     tags: ['React', 'SQL Server', 'Flutter', 'Figma'],
     projects: ['subik', 'cinetrack']
   },
@@ -201,7 +202,7 @@ export const JOURNEY = [
     kind: 'staj',
     where: 'Eduprime · ODTÜ Teknokent',
     detail: 'Ankara',
-    role: 'Yapay zekâ yazılım geliştirici stajyeri.',
+    role: 'Yapay zekâ yazılım geliştirici stajyeri. Yunus Emre Enstitüsü için Türkçe konuşma platformunun demosunu 3 ayda geliştirdik: Whisper + LLM puanlama akışını, öğretmen onayı adımını, Bilge agent’ını ve öğrenci/öğretmen arayüzlerini yapay zekâ destekli geliştirmeyle kurdum.',
     photos: [
       photo('eduprime-1', 'ODTÜ Teknokent', 1054, 1400, '50% 60%'),
       photo('eduprime-2', 'Staj günlerinden: kod başında', 1054, 1400, '60% 70%'),
@@ -246,7 +247,7 @@ export const JOURNEY = [
     kind: 'sırada',
     where: 'Senin projen?',
     detail: 'Yeni bir ürün, yeni bir ekip.',
-    role: 'Yapay zekâ destekli bir fikrin varsa birlikte yayına taşıyalım.'
+    role: 'Yapay zekâ destekli bir fikrin varsa birlikte tasarlayıp geliştirelim.'
   }
 ];
 

@@ -298,7 +298,7 @@ export default function App() {
         <span>
           © {SITE.year} {SITE.name}
         </span>
-        <span>tasarım ve kod — {SITE.short}</span>
+        <span>tasarım ve geliştirme — {SITE.short} · yapay zekâ ile</span>
         <a href="#top">başa dön ↑</a>
       </footer>
 

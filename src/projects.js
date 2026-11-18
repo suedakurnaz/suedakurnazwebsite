@@ -187,7 +187,7 @@ const RAW = [
     pills: ['Mart 2026', 'Bireysel proje'],
     info: {
       meta: '#bireysel proje · Mart 2026',
-      role: 'kurucu, ürün tasarımı ve yapay zekâ geliştirme',
+      role: 'kurucu, ürün tasarımı ve geliştirme',
       desc: 'Kullanıcının kendi seçtiği sitelerden anlık veri çeken, yapay zekâyla özetleyip kategorize eden ve profiline göre puanlayan kişisel fırsat akışı.',
       tools: ['Figma', 'Llama 3.3 70B', 'Groq', 'Web']
     },
@@ -196,7 +196,7 @@ const RAW = [
       'Hackathon, yarışma, staj ve bootcamp ilanları tek akışta toplanıyor; her fırsat profil uyumuna göre sıralanıyor ve kaçırılacak tarih kalmıyor.'
     ],
     specs: [
-      ['Rol', 'Kurucu, ürün tasarımı ve yapay zekâ geliştirme'],
+      ['Rol', 'Kurucu, ürün tasarımı ve geliştirme'],
       ['Model', 'Llama 3.3 70B · Groq'],
       ['Araçlar', 'Figma · Web'],
       ['Tarih', 'Mart 2026']
